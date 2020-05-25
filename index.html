@@ -1,13 +1,47 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de registro</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="app.js"></script>
-</head>
-<body>
-    <p>Formulario de Registro</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de registro</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="header">
+                <h1>Formulario de Registro</h1>
+            </div>
+            <div class="main">
+                <form>
+                    <label for="name">Nombre</label> <br>
+                    <input id="name" type="text" name="name" placeholder="ingrese nombre">
+                    <p id="nameError" class="error"></p>
+                    <label for="lastname">Apellido</label> <br>
+                    <input id="lastname" type="text" name="lastname" placeholder="ingrese apellido">
+                    <p id="lastnameError" class="error"></p>
+                    <label for="email">Email</label> <br>
+                    <input id="email" type="text" name="email" placeholder="ingrese email">
+                    <p id="emailError" class="error"></p>
+                    <label for="age">Edad</label> <br>
+                    <input id="age" type="text" name="age" placeholder="ingrese edad">
+                    <p id="ageError" class="error"></p>
+                    <label for="gender">Genero</label> <br>
+                    <input id="gender" type="radio" name="gender" value="Mujer" checked> Mujer <br>
+                    <input id="gender" type="radio" name="gender" value="Hombre"> Hombre <br>
+                    <input id="gender" type="radio" name="gender" value="Otro"> Otro <br>
+                    <label for="gender">Temas de interes</label> <br>
+                    <input id="topic" type="checkbox" name="topic" value="Musica"> Musica <br>
+                    <input id="topic" type="checkbox" name="topic" value="Deportes"> Deportes <br>
+                    <input id="topic" type="checkbox" name="topic" value="Juegos"> Juegos <br>
+                    <input id="topic" type="checkbox" name="topic" value="Tecnologia"> Tecnologia <br>
+                    <label for="comments">Comentarios</label> <br>
+                    <input id="comments" type="text" name="comments">
+                    <button type="submit" id="send">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>
