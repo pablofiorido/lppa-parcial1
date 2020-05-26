@@ -7,3 +7,14 @@ form{
     font-family: monospace;
     font-size: x-large;
 }
+
+input, button{
+    border: 5px #CCC solid;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #000;
+}
+
+.error{
+    color: red;
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulario de registro</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
         <link rel="stylesheet" href="style.css">
+        <title>Formulario de registro</title>
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
@@ -32,13 +32,23 @@
                     <input id="gender" type="radio" name="gender" value="Mujer" checked> Mujer <br>
                     <input id="gender" type="radio" name="gender" value="Hombre"> Hombre <br>
                     <input id="gender" type="radio" name="gender" value="Otro"> Otro <br>
-                    <label for="gender">Temas de interes</label> <br>
+                    <label for="topic">Temas de interes</label> <br>
                     <input id="topic" type="checkbox" name="topic" value="Musica"> Musica <br>
                     <input id="topic" type="checkbox" name="topic" value="Deportes"> Deportes <br>
                     <input id="topic" type="checkbox" name="topic" value="Juegos"> Juegos <br>
                     <input id="topic" type="checkbox" name="topic" value="Tecnologia"> Tecnologia <br>
+                    <input id="topic" type="checkbox" name="topic" value="Otros"> Otros <br>
+                    <p id="topicError" class="error"></p>
+                    <label for="country">Pais</label> <br>
+                    <select name="country" id="country">
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Uruguay">Uruguay</option>
+                    </select> <br>
                     <label for="comments">Comentarios</label> <br>
                     <input id="comments" type="text" name="comments">
+                    <p id="commentsError" class="error"></p>
                     <button type="submit" id="send">Enviar</button>
                 </form>
             </div>
