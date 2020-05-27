@@ -7,7 +7,7 @@ var emailError = null
 var age = null
 var ageError = null
 var gender = null
-var topic = null
+var topicArray = new Array()
 var topicError = null
 var country = null
 var comments = null
@@ -49,16 +49,13 @@ var sendForm = function (evt) {
         console.log(age.value)
     }
 
-    if (gender.value != null) {
-        console.log(gender.value)
-    }
+    console.log(getRadioButtonSelectedValue(document.form1.gender))
 
-    if (topic.value == null) {
-        topicError.innerHTML = 'Seleccione tema de interes'
-        console.log(topic.value)
+    if (getCheckBoxSelectedValues(document.form1.topic) == false) {
+        topicError.innerHTML = 'Seleccione al menos un tema de interes'
     } else {
         topicError.innerHTML = ''
-        console.log(topic.value)
+        console.log(getCheckBoxSelectedValues(document.form1.topic))
     }
 
     if (country.value != null) {
@@ -76,10 +73,27 @@ var sendForm = function (evt) {
     return false
 }
 
+
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
+
+function getRadioButtonSelectedValue(ctrl) {
+    for (i = 0; i < ctrl.length; i++)
+        if (ctrl[i].checked) return ctrl[i].value;
+}
+
+function getCheckBoxSelectedValues(ctrl) {
+    topicArray = []
+    for (i = 0; i < ctrl.length; i++) {
+        if (ctrl[i].checked) {
+            topicArray[i] = ctrl[i].value
+        }
+    }
+    return topicArray
+}
+
 
 window.onload = function () {
     name1 = document.getElementById('name')
@@ -113,9 +127,4 @@ window.onload = function () {
 
     commentsError = document.getElementById('commentsError')
 
-}
-
-function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
 }
