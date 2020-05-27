@@ -126,5 +126,5 @@ window.onload = function () {
     topicError = document.getElementById('topicError')
 
     commentsError = document.getElementById('commentsError')
-
 }
+
